@@ -70,20 +70,21 @@ public class CustomerController {
 
     // In order to expose this method as a rest endpoint for the users to
     // use as a GET request the following tag is used
-//    @GetMapping("/greet")
-//    public GreetResponse greet(){
-//        return new GreetResponse(
-//                "Hello",
-//                List.of("Python", "Java", "Cpp"),
-//                new Person("Fausto", 22, 500));
-//    }
-//    record Person(
-//            String name,
-//            int age,
-//            double cash){}
-//    record GreetResponse(
-//            String greet,
-//            List<String> favProgrammingLangs,
-//            Person person
-//    )
+    @GetMapping("/greet")
+    public GreetResponse greet(){
+        return new GreetResponse(
+                "Hello",
+                List.of("Python", "Java", "Cpp"),
+                new Person("Fausto", 22, 500));
+    }
+    record Person(
+            String name,
+            int age,
+            double cash){}
+    record GreetResponse(
+            String greet,
+            List<String> favProgrammingLangs,
+            Person person
+    ){}
+
 }

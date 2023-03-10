@@ -10,6 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@Table(name = "customer")
 public class Customer {
 
     @Id
@@ -22,10 +23,11 @@ public class Customer {
             strategy = GenerationType.SEQUENCE,
             generator = "customer_id_sequence"
     )
+
     @Column(name = "id")
     private Integer id;
     @Basic
-    @Column(name = "name")
+    @Column(name = "nombre")
     private String name;
     @Basic
     @Column(name = "email")
@@ -38,6 +40,11 @@ public class Customer {
     @Column(name = "password")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
+
+    @Column(name = "verification_code", length = 64)
+    private String verificationCode;
+
+    private boolean enabled;
 
 // MANUALLY ADDED CONSTRUCTORS, SETTERS AND GETTERS --------------------------------------------------
 //    public Customer(Integer id, String name, String email, Integer age, String password) {
